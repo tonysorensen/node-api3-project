@@ -1,5 +1,8 @@
 function logger(req, res, next) {
   // DO YOUR MAGIC
+  console.log('Request method: ',req.method, 'Request URL: ', req.url, 'Timestamp: ',new Date().toISOString());
+
+  next();
 }
 
 function validateUserId(req, res, next) {
@@ -15,3 +18,5 @@ function validatePost(req, res, next) {
 }
 
 // do not forget to expose these functions to other modules
+
+module.exports = logger
